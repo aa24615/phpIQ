@@ -133,12 +133,15 @@ film.name建立了idx_name索引,此时查询时extra是using index
 
 6）Select tables optimized away：使用某些聚合函数（比如 max、min）来访问存在索引的某个字段是
 
-### 请写出数据类型(int char varchar datetime text)的意思；请问 varchar 和 char有什么区别？
+### 数据类型(int、char、varchar、datetime、text)分别的什么；
 
-Int 整数char 定长字符 Varchar 变长字符 Datetime 日期时间型Text 文本型 Varchar与char的区别 char是固定长度的字符类型，分配多少空间，就占用多长空间。Varchar是可变长度的字符类型，内容有多大就占用多大的空间，能有效节省空间。由于varchar类型是可变的，所以在数据长度改变的时，服务器要进行额外的操作，所以效率比char类型低。
+Int 整数char 定长字符 Varchar 变长字符 Datetime 日期时间型Text 文本型 Varchar与char的区别 char是固定长度的字符类型，分配多少空间，就占用多长空间。
 
+### _varchar和char的区别
 
-### 主键、外键和索引的区别？
+Varchar是可变长度的字符类型，内容有多大就占用多大的空间，能有效节省空间。由于varchar类型是可变的，所以在数据长度改变的时，服务器要进行额外的操作，所以效率比char类型低。
+
+### 主键、外键和索引的区别
 
 定义：主键--唯一标识一条记录，不能有重复的，不允许为空外键--表的外键是另一表的主键, 外键可以有重复的, 可以是空值索引--该字段没有重复值，但可以有一个空值
 作用：主键--用来保证数据完整性外键--用来和其他表建立联系用的索引--是提高查询排序的速度
