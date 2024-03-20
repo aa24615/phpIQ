@@ -1,11 +1,30 @@
 # php面试题汇总
 
+结合实际PHP面试，以及网上其他人遇到的问题，尝试提供简洁准确的答案
 
 
-- [php基本](php基本.md)
-- [框架相关](框架相关.md)
-- [mysql面试题](mysql面试题.md)
-- [redis面试题](redis面试题.md)
+## 问题列表
+
+
+
+
+### php面试题
+  - [isset和empty的区别](./docs/php面试题.md#isset和empty的区别)
+  - [error_reporting的作用](./docs/php面试题.md#error_reporting的作用)
+
+### php框架相关
+
+
+### mysql面试题
+
+
+### redis面试题
+
+
+
+
+
+
 
 
 ### 参与贡献
