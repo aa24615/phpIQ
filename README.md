@@ -10,13 +10,18 @@
 
 ### php面试题
   - [isset和empty的区别](./docs/php面试题.md#isset和empty的区别)
+  - [单引号和双引号的区别](./docs/php面试题.md#单引号和双引号的区别)
   - [error_reporting的作用](./docs/php面试题.md#error_reporting的作用)
   - [include和requirer的区别](./docs/php面试题.md#include和requirer的区别)
   - [php中的sql防注入](./docs/php面试题.md#php中的sql防注入)
+  - [常见数组函数](./docs/php面试题.md#常见数组函数)
   - [什么是面向对象](./docs/php面试题.md#什么是面向对象)
   - [对象的主要特征包括](./docs/php面试题.md#对象的主要特征包括)
   - [php怎么实现静态化](./docs/php面试题.md#php怎么实现静态化)
   - [常见的设计模式](./docs/php面试题.md#常见的设计模式)
+  - [MySQL、MySQLi、PDO的区别](./docs/php面试题.md#MySQL、MySQLi、PDO的区别)
+  - [链式调用实现](./docs/php面试题.md#链式调用实现)
+  - [异常处理](./docs/php面试题.md#异常处理)
   - [CSRF和XSS攻击分别是什么](./docs/php面试题.md#CSRF和XSS攻击分别是什么)
   - [抽象类和接口分别是什么](./docs/php面试题.md#抽象类和接口分别是什么)
   - [谈谈对设计模式的了解](./docs/php面试题.md#谈谈对设计模式的了解)
@@ -48,6 +53,7 @@
   - [$this和self、parent这三个关键词分别](./docs/php面试题.md#$this和self、parent这三个关键词分别)
   - [__autoload()方法的工作原理是什么](./docs/php面试题.md#__autoload()方法的工作原理是什么)
   - [简述高并发网站解决方案](./docs/php面试题.md#简述高并发网站解决方案)
+  - [串行、并行、并发的区别](./docs/php面试题.md#串行、并行、并发的区别)
 
 ### php框架相关
   
