@@ -549,7 +549,15 @@ A、前端优化（CND加速、建立独立图片服务器）B、服务端优化
 
 cURL、file_get_contents、fopen、fsockopen
 
+### http状态码
 
+状态码 原因短语
+
+- 1XX Informational （信息性状态码） 接收的请求正在处理
+- 2XX Success （成功状态码） 请求正常处理完毕
+- 3XX Redirection （重定向状态码) 需要进行附加操作以完成请求
+- 4XX Client Error（客户端错误状态码） 服务器无法处理请求
+- 5XX Server Error （服务器错误状态码) 服务器处理请求出错
 
 
 
