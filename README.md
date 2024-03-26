@@ -81,6 +81,7 @@
   - [数据类型(int、char、varchar、datetime、text)分别的什么](./docs/mysql面试题.md#数据类型(int、char、varchar、datetime、text)分别的什么**)
   - [varchar和char的区别](./docs/mysql面试题.md#varchar和char的区别)
   - [主键、外键和索引的区别](./docs/mysql面试题.md#主键、外键和索引的区别)
+  - [MySQL多表联合查询](./docs/mysql面试题.md#MySQL多表联合查询)
 
 ### redis面试题
 
@@ -96,6 +97,10 @@
   - [AOF优点和缺点](./docs/redis面试题.md#AOF优点和缺点)
   - [redis字符串类型底层实现](./docs/redis面试题.md#redis字符串类型底层实现)
 
+
+### linux面试题
+
+  - [常用的Linux命令](./docs/linux面试题.md#常用的Linux命令)
 
 ### 送命题
   - [对加班怎么看](./docs/其他.md#你对加班怎么看)

@@ -229,3 +229,50 @@ MySQL表设计优化是数据库性能调优的重要部分，以下是一些关
 使用MySQL的性能监控工具，如SHOW PROCESSLIST、SHOW INDEX等，来查看表的使用情况和性能瓶颈。
 定期分析慢查询日志，找出需要优化的查询。
 在设计数据库表时，需要根据具体的业务场景和需求进行权衡。优化表设计是一个持续的过程，需要不断地监控、分析和调整。
+
+
+### MySQL多表联合查询
+
+
+
+
+- 内连接
+
+隐式内连接 
+
+```mysql
+select username,name from user,goods where user,gid=gods,gid;
+
+```
+显示内连接 
+
+```mysql
+select username,from user inner join goods on user.gid=goods.gid;
+select * from user left join goods on user.gid=goods.gid;
+
+```
+
+- 外链接 
+
+左/右连接
+
+```mysql
+select * from user where gid in(select gid from goods);
+select * from user right jOin goods on user.gid=goods.gid；
+
+```
+数据联合查询
+
+```mysql
+select * from user left join goods on user.gid=goods.gid 
+union
+select * from user right join goods on user.gid=goods.gid;
+
+```
+
+两个表同时更新
+
+```mysql
+update user u, goods g set u.gid=12,g.price=1 where u.id=2 and u.gid=g.gid;
+
+```
