@@ -63,6 +63,20 @@
   - [模板引擎的原理](./docs/php框架相关.md#模板引擎的原理)
 
 
+### composer面试题
+
+- [composer的工作原理](./docs/composer.md#composer的工作原理)
+- [使用composer创建并部署一个PHP包](./docs/composer.md#使用composer创建并部署一个PHP包)
+- [composer的自动加载机制是如何实现的](./docs/composer.md#composer的自动加载机制是如何实现的)
+- [如何解决composer依赖冲突的问题](./docs/composer.md#如何解决composer依赖冲突的问题)
+- [composer中的require和require-dev有什么区别](./docs/composer.md#composer中的require和require-dev有什么区别)
+- [如何优化composer的加载速度](./docs/composer.md#如何优化composer的加载速度)
+- [composer的全局安装和局部安装有什么区别](./docs/composer.md#composer的全局安装和局部安装有什么区别)
+- [composer的命令行常用命令及其作用](./docs/composer.md#composer的命令行常用命令及其作用)
+
+
+
+
 ### mysql面试题
 
   - [MyISAM和InnoDB的区别](./docs/mysql面试题.md#MyISAM和InnoDB的区别)
@@ -97,10 +111,20 @@
   - [AOF优点和缺点](./docs/redis面试题.md#AOF优点和缺点)
   - [redis字符串类型底层实现](./docs/redis面试题.md#redis字符串类型底层实现)
 
+### 数据结构与算法
+
+### 设计模式
 
 ### linux面试题
 
   - [常用的Linux命令](./docs/linux面试题.md#常用的Linux命令)
+
+### web安全
+
+### 架构
+
+  - [分布式和集群的概念](./docs/架构.md#分布式和集群的概念)
+
 
 ### 送命题
   - [对加班怎么看](./docs/其他.md#你对加班怎么看)
@@ -113,6 +137,8 @@
   - [工作遇到的最大困难以及解决方法是什么](./docs/其他.md#工作遇到的最大困难以及解决方法是什么)
   - [工作中觉得最有成就感事是什么](./docs/其他.md#工作中觉得最有成就感事是什么)
   
+
+
 
 ### 参与贡献
 
