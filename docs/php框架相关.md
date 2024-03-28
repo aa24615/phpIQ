@@ -125,7 +125,117 @@ PHP模板引擎的原理是作为视图层和模型层分离的一种有效解�
 PHP模板引擎的原理来自于经典的MVC模型，即模型层-视图层-控制器模型。使用MVC的目的是将M和V实现代码分离，从而使同一个程序可以使用不同的表现形式。随着Web的流行，这一模型被引入Web开发中。此时，V（视图层），也就是通常所说的模板，实现了数据生成和数据展示的分离。
 
 
+### 中文英文占用多少字节
 
+在 PHP 中，中文字符和英文字符占用的字节数取决于字符的编码方式。以下是在常见的编码方式下，中文字符和英文字符占用的字节数：
+
+- UTF-8 编码：
+
+中文字符：通常占用 3 个字节（有些特殊字符可能占用 4 个字节）。      
+英文字符：占用 1 个字节。
+
+- GBK/GB2312 编码：
+
+中文字符：通常占用 2 个字节。        
+英文字符：占用 1 个字节。
+
+- ASCII 编码：
+
+中文字符：无法直接表示，需要编码转换或使用多字节表示。     
+英文字符：占用 1 个字节。
+
+请注意，这些数字是基于字符的平均情况。实际上，有些中文字符在 UTF-8 编码下可能占用 4 个字节，这取决于字符的具体内容。
+
+当在 PHP 中处理字符串时，特别是在处理多语言文本时，了解字符的编码和占用字节数非常重要，这有助于避免诸如截断、乱码等问题。
+
+
+### 延迟队列怎么实现
+
+
+在 PHP 中实现延迟队列，你可以使用 Redis 或其他消息队列服务，如 RabbitMQ、Kafka 等。     
+下面我将为你提供一个使用 Redis 实现延迟队列的简单示例。
+
+首先，确保你的 PHP 环境已经安装了 Redis 扩展。       
+你可以使用 Composer 来安装 predis/predis 包，这是一个流行的 Redis 客户端库。
+
+```json
+composer require predis/predis
+```
+
+接下来，你可以使用以下代码来实现延迟队列：
+
+```php
+
+require 'vendor/autoload.php';
+
+use Predis\Client;
+
+// 创建 Redis 客户端实例
+$redis = new Client([
+    'scheme' => 'tcp',
+    'host'   => '127.0.0.1',
+    'port'   => 6379,
+]);
+
+// 将任务添加到延迟队列
+function addTaskToDelayQueue($taskId, $delay, $data)
+{
+    global $redis;
+
+    // 计算任务应该被处理的时间戳
+    $processAt = time() + $delay;
+
+    // 将任务添加到 Redis 的有序集合中，以时间戳为分数，任务 ID 为成员
+    $redis->zadd('delay_queue', [$taskId => $processAt]);
+}
+
+// 从延迟队列中获取并处理任务
+function processTasksFromDelayQueue()
+{
+    global $redis;
+
+    // 获取当前时间戳
+    $now = time();
+
+    // 从有序集合中获取所有已经到达处理时间的任务
+    $tasks = $redis->zrangebyscore('delay_queue', 0, $now, ['withscores' => false]);
+
+    // 遍历任务并处理
+    foreach ($tasks as $taskId) {
+        // 从有序集合中移除已处理的任务
+        $redis->zrem('delay_queue', $taskId);
+
+        // 处理任务的具体逻辑
+        handleTask($taskId);
+    }
+}
+
+// 处理任务的具体逻辑
+function handleTask($taskId)
+{
+    // 在这里实现你的任务处理逻辑
+    echo "处理任务: $taskId\n";
+}
+
+// 示例用法
+addTaskToDelayQueue('task1', 10, '任务数据1'); // 10 秒后处理
+addTaskToDelayQueue('task2', 5, '任务数据2'); // 5 秒后处理
+
+// 模拟处理延迟队列中的任务
+while (true) {
+    processTasksFromDelayQueue();
+    sleep(1); // 每秒检查一次
+}
+
+```
+
+在上面的示例中，我们使用了 Redis 的有序集合（sorted set）来实现延迟队列。       
+每个任务都有一个唯一的 ID，我们将其添加到有序集合中，并使用时间戳作为分数。     
+然后，我们定期检查有序集合中所有已经到达处理时间的任务，并将其从集合中移除，然后处理这些任务。
+
+请注意，这只是一个简单的示例，用于演示如何在 PHP 中实现延迟队列。     
+在实际应用中，你可能需要添加更多的错误处理、日志记录和其他功能来确保系统的稳定性和可靠性。       
+此外，你还可以考虑使用更专业的消息队列服务，如 RabbitMQ 或 Kafka，它们提供了更强大和灵活的功能。
 
 
 
