@@ -100,10 +100,12 @@
 ### redis面试题
 
   - [常用的数据类型有哪些](./docs/redis面试题.md#常用的数据类型有哪些)
-  - [淘汰策略](./docs/redis面试题.md#淘汰策略)
+  - [数据过期策略](./docs/redis面试题.md#数据过期策略)
+  - [内存淘汰机制](./docs/redis面试题.md#内存淘汰机制)
   - [事务机制](./docs/redis面试题.md#事务机制)
   - [缓存击穿](./docs/redis面试题.md#缓存击穿)
   - [缓存穿透](./docs/redis面试题.md#缓存穿透)
+  - [缓存雪崩](./docs/redis面试题.md#缓存雪崩)
   - [分布式锁](./docs/redis面试题.md#分布式锁)
   - [集群](./docs/redis面试题.md#集群)
   - [持久化](./docs/redis面试题.md#持久化)
